@@ -14,9 +14,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# ----------------------------------------------------------
-# Custom CSS — tampilan lebih modern dan bersih
-# ----------------------------------------------------------
+
+# Custom CSS
 st.markdown("""
 <style>
     /* Header utama */
@@ -118,9 +117,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ----------------------------------------------------------
+
 # HEADER
-# ----------------------------------------------------------
 st.markdown("""
 <div class="main-header">
     <h1>🏦 Bank Customer Churn Prediction</h1>
@@ -128,9 +126,8 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ----------------------------------------------------------
+
 # METRIC CARDS — load dari comparison_metrics.joblib
-# ----------------------------------------------------------
 MODEL_DIR = "models"
 comparison_path = os.path.join(MODEL_DIR, "comparison_metrics.joblib")
 
@@ -177,9 +174,8 @@ if os.path.exists(comparison_path):
 
         st.markdown("<br>", unsafe_allow_html=True)
 
-# ----------------------------------------------------------
+
 # DESKRIPSI SINGKAT
-# ----------------------------------------------------------
 st.markdown("""
 Aplikasi ini men-deploy model **Artificial Neural Network (ANN)** yang dilatih pada
 *Bank Customer Churn Dataset* untuk memprediksi apakah seorang nasabah berpotensi
@@ -199,9 +195,8 @@ st.markdown("""
 st.markdown("<br>", unsafe_allow_html=True)
 st.divider()
 
-# ----------------------------------------------------------
+
 # NAVIGASI
-# ----------------------------------------------------------
 st.markdown("### 🗺️ Navigasi Halaman")
 st.caption("Gunakan sidebar kiri atau klik deskripsi di bawah untuk berpindah halaman.")
 
@@ -238,9 +233,8 @@ with col2:
 st.markdown("<br>", unsafe_allow_html=True)
 st.divider()
 
-# ----------------------------------------------------------
+
 # TENTANG PROJECT
-# ----------------------------------------------------------
 with st.expander("📖 Tentang Project ini"):
     st.markdown("""
     **Mini Project 2** merupakan lanjutan dari Mini Project 1 yang menggunakan
@@ -263,9 +257,8 @@ with st.expander("📖 Tentang Project ini"):
     F1-Score dan ROC-AUC sebagai metrik utama karena data imbalance.
     """)
 
-# ----------------------------------------------------------
+
 # FOOTER
-# ----------------------------------------------------------
 st.markdown("""
 <div class="footer">
     📂 Dataset: <a href="https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset" target="_blank">

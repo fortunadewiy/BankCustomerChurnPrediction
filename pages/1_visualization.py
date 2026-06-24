@@ -20,9 +20,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ----------------------------------------------------------
 # Custom CSS
-# ----------------------------------------------------------
 st.markdown("""
 <style>
     .section-header {
@@ -60,9 +58,8 @@ st.caption("Ringkasan dataset, eksplorasi data interaktif, dan perbandingan perf
 
 model, scaler, gender_encoder, feature_columns, comparison_df = load_artifacts()
 
-# ----------------------------------------------------------
+
 # BAGIAN 1: Ringkasan Dataset
-# ----------------------------------------------------------
 st.markdown('<div class="section-header">1. Ringkasan Dataset</div>', unsafe_allow_html=True)
 
 DATA_PATH = os.path.join("data", "Bank Customer Churn Prediction.csv")
@@ -82,9 +79,8 @@ if os.path.exists(DATA_PATH):
 
     st.markdown("---")
 
-    # ----------------------------------------------------------
-    # BAGIAN 2: EDA Interaktif
-    # ----------------------------------------------------------
+
+    # BAGIAN 2: EDA
     st.markdown('<div class="section-header">2. Eksplorasi Data Interaktif</div>', unsafe_allow_html=True)
 
     tab1, tab2, tab3 = st.tabs(["📈 Distribusi Fitur", "🔗 Hubungan dengan Churn", "📋 Statistik Deskriptif"])
@@ -119,7 +115,7 @@ if os.path.exists(DATA_PATH):
             st.pyplot(fig)
             plt.close()
 
-            # Insight otomatis
+            # Insight secara otomatis
             mean_churn    = df_churn.mean()
             mean_no_churn = df_no_churn.mean()
             diff = mean_churn - mean_no_churn
@@ -162,7 +158,7 @@ if os.path.exists(DATA_PATH):
             st.pyplot(fig)
             plt.close()
 
-            # Insight otomatis
+            # Insight secara otomatis
             top_group    = churn_by_feature.idxmax()
             top_rate     = churn_by_feature.max()
             bottom_group = churn_by_feature.idxmin()
@@ -188,9 +184,8 @@ if os.path.exists(DATA_PATH):
 else:
     st.warning(f"File CSV tidak ditemukan di `{DATA_PATH}`.")
 
-# ----------------------------------------------------------
+
 # BAGIAN 3: Perbandingan Model
-# ----------------------------------------------------------
 st.markdown('<div class="section-header">3. Perbandingan Model: ANN vs Decision Tree (Tuned)</div>',
             unsafe_allow_html=True)
 

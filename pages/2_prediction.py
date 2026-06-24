@@ -15,9 +15,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ----------------------------------------------------------
 # Custom CSS
-# ----------------------------------------------------------
 st.markdown("""
 <style>
     .section-header {
@@ -98,9 +96,8 @@ st.caption("Masukkan data nasabah, lalu klik Prediksi untuk mendapatkan hasil da
 
 model, scaler, gender_encoder, feature_columns, comparison_df = load_artifacts()
 
-# ----------------------------------------------------------
+
 # FORM INPUT
-# ----------------------------------------------------------
 st.markdown('<div class="section-header">Data Nasabah</div>', unsafe_allow_html=True)
 
 with st.form("prediction_form"):
@@ -132,9 +129,8 @@ with st.form("prediction_form"):
     st.markdown("<br>", unsafe_allow_html=True)
     submitted = st.form_submit_button("🔮 Prediksi Sekarang", use_container_width=True)
 
-# ----------------------------------------------------------
+
 # HASIL PREDIKSI
-# ----------------------------------------------------------
 if submitted:
     raw_input = {
         'credit_score'    : credit_score,
@@ -187,9 +183,8 @@ if submitted:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ----------------------------------------------------------
+    
     # RISK FACTORS & PROFILE
-    # ----------------------------------------------------------
     col_risk, col_rekom = st.columns([1, 1])
 
     with col_risk:
@@ -311,9 +306,8 @@ if submitted:
 
     st.markdown("---")
 
-    # ----------------------------------------------------------
+    
     # DETAIL INPUT
-    # ----------------------------------------------------------
     with st.expander("📋 Detail lengkap data yang diinput"):
         detail_df = pd.DataFrame({
             "Fitur": ["Gender", "Usia", "Negara", "Credit Score", "Saldo",
